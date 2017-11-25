@@ -2550,7 +2550,7 @@ def bot(op):
                             except:
                                 cl.sendText(msg.to,"Error")
 
-           elif "Unban @" in msg.text:
+            elif "Unban @" in msg.text:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     print "[Unban] OK"
