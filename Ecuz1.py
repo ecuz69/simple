@@ -2550,40 +2550,6 @@ def bot(op):
                             except:
                                 cl.sendText(msg.to,"Error")
 
-				 #----------------Fungsi Unbanned User Target Start-----------------------#
-            elif "Unban @" in msg.text:
-              if msg.from_ in admin:
-                if msg.toType == 2:
-                    print "[Unban] Sukses"
-                    _name = msg.text.replace("Unban @","")
-                    _nametarget = _name.rstrip('  ')
-                    gs = ki.getGroup(msg.to)
-                    gs = ki2.getGroup(msg.to)
-                    gs = ki3.getGroup(msg.to)
-                    gs = ki4.getGroup(msg.to)
-                    gs = ki5.getGroup(msg.to)
-                    gs = ki6.getGroup(msg.to)
-                    gs = kibackup.getGroup(msg.to)
-                    targets = []
-                    for g in gs.members:
-                        if _nametarget == g.displayName:
-                            targets.append(g.mid)
-                    if targets == []:
-                        cl.sendText(msg.to,"Tidak Ditemukan.....")
-                        ki.sendText(msg.to,"Tidak Ditemukan.....")
-                        kk.sendText(msg.to,"Tidak Ditemukan.....")
-                        kc.sendText(msg.to,"Tidak Ditemukan.....")
-                    else:
-                        for target in targets:
-                            try:
-                                del wait["blacklist"][target]
-                                f=codecs.open('st2__b.json','w','utf-8')
-                                json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                                cl.sendText(msg.to,"Sampah sukses di bersihkan Bossquee")
-                            except:
-                                ki.sendText(msg.to,"Succes Bossque")
-           #----------------Fungsi Unbanned User Target Finish-----------------------#
-	
             elif "Ban all" in msg.text:
               if msg.from_ in admin:
                 if msg.toType == 2:
