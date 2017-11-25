@@ -2550,6 +2550,40 @@ def bot(op):
                             except:
                                 cl.sendText(msg.to,"Error")
 
+           elif "Unban @" in msg.text:
+              if msg.from_ in admin:
+                if msg.toType == 2:
+                    print "[Unban] OK"
+                    _name = msg.text.replace("Unban @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    gs = ki.getGroup(msg.to)
+                    gs = ki2.getGroup(msg.to)
+                    gs = ki3.getGroup(msg.to)
+                    gs = ki4.getGroup(msg.to)
+                    gs = ki5.getGroup(msg.to)
+                    gs = ki6.getGroup(msg.to)
+                    gs = kibackup.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"420 NOT FOUND")
+                        ki.sendText(msg.to,"420 NOT FOUND")
+                        kk.sendText(msg.to,"420 NOT FOUND")
+                        kc.sendText(msg.to,"420 NOT FOUND")
+                    else:
+                        for target in targets:
+                            try:
+                                del wait["blacklist"][target]
+                                f=codecs.open('st2__b.json','w','utf-8')
+                                json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                                cl.sendText(msg.to,"Sampah sukses di bersihkan Bossquee")
+                            except:
+                                cl.sendText(msg.to,"Succes Bossque")
+
+
             elif "Ban all" in msg.text:
               if msg.from_ in admin:
                 if msg.toType == 2:
